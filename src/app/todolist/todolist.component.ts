@@ -9,7 +9,21 @@ import { Todo } from './todo';
 })
 export class TodolistComponent {
 
+  newTodo: Todo = new Todo();
+
   constructor(private todoService: TodoService) { }
 
+  addTodo() {
+    this.todoService.addTodo(this.newTodo);
+    this.newTodo = new Todo();
+  }
+
+  removeTodo(todo) {
+    this.todoService.deleteTodoById(todo.id);
+  }
+
+  getTodos() {
+    return this.todoService.getAllTodos();
+  }
 
 }
