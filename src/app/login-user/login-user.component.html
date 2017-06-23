@@ -1,10 +1,11 @@
 <form action="submit">
-  <h3><b>Register User</b></h3>
+  <h3><b>Login User</b></h3>
   <label for="username">Username</label><br>
   <input type="text"  [(ngModel)]="newUser" name="username">
   <br>
   <label for="password">Password</label><br>
   <input type="text" [(ngModel)]="newPass" name="password">
   <br>
-  <button (click)="registerUser()" name="button">Register</button>
+  <button (click)="login()" name="button">Log In</button>
+  <button (click)="logout()" name="logoutButton">Log Out</button>
 </form>
