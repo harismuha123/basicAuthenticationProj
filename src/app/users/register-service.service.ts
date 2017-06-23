@@ -17,15 +17,18 @@ export class RegisterServiceService {
     if (this.users[username]) {
       if (password === this.users[username]) {
           this.validUser = username;
+          console.log('Successfully logged in!');
           return Observable.of(true);
       }
-      return Observable.throw('Invalid password!');
+      console.log('Invalid pass!');
+      // return Observable.throw('Invalid password!');
     }
     return Observable.throw('Username not found!');
   }
 
   logout() {
     this.validUser = undefined;
+    console.log(this.validUser);
   }
 
   getCurrentUser() {

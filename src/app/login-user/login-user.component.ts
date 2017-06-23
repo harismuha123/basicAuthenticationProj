@@ -20,4 +20,8 @@ export class LoginUserComponent {
     this.loginService.logout();
   }
 
+  getCurrentUser() {
+    this.loginService.getCurrentUser();
+  }
+
 }
