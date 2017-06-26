@@ -34,4 +34,11 @@ export class RegisterServiceService {
   getCurrentUser() {
     return Observable.of(this.validUser);
   }
+
+  showTodo() {
+    if (this.validUser) {
+      return true;
+    }
+    return false;
+  }
 }

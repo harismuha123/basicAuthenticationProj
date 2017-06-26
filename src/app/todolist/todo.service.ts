@@ -9,14 +9,14 @@ export class TodoService {
   lastId = 0;
 
   // placeholder for TODOS
-  todos: Todo[]
+  todos: Todo[] = [];
 
   constructor() {
 
    }
 
    // simulate POST /todos
-   addTodo(todo: Todo): TodoService{
+   addTodo(todo: Todo): TodoService {
      if (!todo.id) {
         todo.id = ++this.lastId;
      }

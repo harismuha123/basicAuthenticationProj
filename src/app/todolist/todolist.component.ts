@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from './todo.service';
 import { Todo } from './todo';
+import { RegisterServiceService } from '../users/register-service.service';
 
 @Component({
   selector: 'app-todolist',
@@ -11,7 +12,7 @@ export class TodolistComponent {
 
   newTodo: Todo = new Todo();
 
-  constructor(private todoService: TodoService) { }
+  constructor(private todoService: TodoService, private registerService: RegisterServiceService) { }
 
   addTodo() {
     this.todoService.addTodo(this.newTodo);
@@ -22,8 +23,12 @@ export class TodolistComponent {
     this.todoService.deleteTodoById(todo.id);
   }
 
-  getTodos() {
+  get todos() {
     return this.todoService.getAllTodos();
+  }
+
+  showTodo(): Boolean {
+    return this.registerService.showTodo();
   }
 
 }
